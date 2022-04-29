@@ -1,0 +1,82 @@
+.destination {
+  background-image: url("/assets/destination/background-destination-mobile.jpg");
+  background-size: cover;
+  @media (min-width: 35em) {
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
+    background-position: center center;
+  }
+}
+
+.grid-container--destination {
+  --flow-space: 2rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.grid-container--destination .numbered-title {
+  grid-area: title;
+}
+
+.grid-container--destination picture {
+  grid-area: image;
+  max-width: 60%;
+}
+
+.grid-container--destination .tab-list {
+  grid-area: tabs;
+}
+
+.grid-container--destination .destination-info {
+  grid-area: content;
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.destination-meta p {
+  font-size: 1.75rem;
+}
+
+@media (min-width: 35em) {
+  .numbered-title {
+    justify-self: start;
+    margin-top: 2rem;
+  }
+
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 45em) {
+  .destination {
+    background-image: url("/assets/destination/background-destination-desktop.jpg");
+    background-size: cover;
+  }
+  .grid-container--destination {
+    --column-gap: 7rem;
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      ". title title ."
+      ". image tabs ."
+      ". image content .";
+  }
+
+  .grid-container--destination > picture {
+    max-width: 90%;
+  }
+
+  .destination-meta {
+    --gap: min(8vh, 6rem);
+    justify-content: start;
+  }
+}

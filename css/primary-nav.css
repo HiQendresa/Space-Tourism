@@ -1,0 +1,118 @@
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-mobile-nav {
+  display: none;
+}
+
+.logo {
+  margin: 2rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-navigation {
+  --gap: clamp(0rem, 5vw, 3.5rem);
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .primary-navigation {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2rem);
+  }
+}
+
+.primary-navigation a {
+  text-decoration: none;
+  font-size: var(--fs-300);
+  font-weight: 400;
+  font-family: var(--ff-sans-normal);
+}
+
+.primary-navigation a > span {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+@media (max-width: 35em) {
+  .primary-navigation {
+    --underline-gap: 0.5rem;
+    position: fixed;
+    inset: 0 0 0 34%;
+    z-index: 1000;
+    flex-direction: column;
+    padding: min(20rem, 25vh) 2rem;
+    margin: 0;
+    transform: translateX(100%);
+    transition: transform  500ms ease-in-out;
+  }
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0);
+  }
+  .primary-navigation.underline-indicators > .active,
+  .primary-navigation.underline-indicators > [aria-selected="true"],
+  .primary-navigation.underline-indicators > *:hover,
+  .primary-navigation.underline-indicators > *:focus {
+    opacity: 1;
+    border-bottom: none;
+  }
+  .underline-indicators > * {
+    border-bottom: none;
+  }
+  .btn-mobile-nav {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    z-index: 2000;
+    border: 0;
+    background: transparent;
+    background-image: url(/assets/shared/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+    transition: background-image 500ms ease-in-out;
+  }
+  .btn-mobile-nav[aria-expanded="true"] {
+    background-image: url(/assets/shared/icon-close.svg);
+  }
+}
+
+@media (min-width: 35em) {
+  .primary-navigation {
+    padding-inline: clamp(2rem, 5vw, 7rem);
+  }
+}
+
+@media (min-width: 35em) and (max-width: 44.999em) {
+  .primary-navigation a > span {
+    display: none;
+  }
+}
+
+@media (min-width: 45em) {
+  .primary-header::before {
+    content: '';
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin-right: -2.5rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    order: 1;
+  }
+  .primary-navigation {
+    margin-block: 2rem;
+  }
+  nav {
+    order: 2;
+  }
+}

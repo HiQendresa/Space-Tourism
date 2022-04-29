@@ -1,0 +1,82 @@
+// Import global classes
+@import "./utility/global_classes";
+
+// import global variables
+@import "./utility/variables";
+
+//  import components
+@import "./utility/components.scss";
+
+// import header
+@import "./include/primary-nav.scss";
+
+// import home scss
+@import "./include/home.scss";
+
+// import destination scss
+@import "./include/destination.scss";
+
+// import crew scss
+@import "./include/crew.scss";
+
+// import technology scss
+@import "./include/technology.scss";
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// settings the margins
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+picture,
+figure {
+  margin: 0;
+}
+
+// set the body
+body {
+  background: var(--clr-dark);
+  font-size: var(--fs-400);
+  min-height: 100vh;
+  line-height: 1.5em;
+  color: var(--clr-white);
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  overflow-x: hidden;
+}
+
+// make images easier to work with
+img{
+  max-width: 100%;
+  display: block;
+}
+picture {
+  max-width: 100%;
+}
+
+// make form elements easier to work with
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

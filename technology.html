@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <!-- Custom css file -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Space tourism website</title>
+  </head>
+  <body class="technology">
+    <a href="#main" class="skip_to_content">Skip to content</a>
+    <header class="primary-header flex">
+      <div class="logo-img">
+        <img src="./assets/shared/logo.svg" alt="logo" class="logo" />
+      </div>
+      <button class="btn-mobile-nav" aria-controls="primary-navigation">
+        <span class="sr-only" aria-expanded="false">Menu</span>
+      </button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation underline-indicators flex"
+        >
+          <li>
+            <a class="uppercase text-white letter-spacing-2" href="/index.html"
+              ><span>00</span>Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="uppercase text-white letter-spacing-2"
+              href="./destination.html"
+              ><span>01</span>Destination</a
+            >
+          </li>
+          <li>
+            <a class="uppercase text-white letter-spacing-2" href="/crew.html"
+              ><span aria-hidden="false">02</span>Crew</a
+            >
+          </li>
+          <li class="active">
+            <a
+              class="uppercase text-white letter-spacing-2"
+              href="/technology.html"
+              ><span aria-hidden="false">03</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="grid-container grid-container--technology flow">
+      <h1 class="numbered-title">
+        <span aria-hidden="true">03</span>Space lunch 101
+      </h1>
+      <picture id="vehicle">
+        <source
+          media="(min-width: 720px)"
+          srcset="./assets/technology/image-launch-vehicle-portrait.jpg"
+        />
+        <img
+          src="./assets/technology/image-launch-vehicle-landscape.jpg"
+          alt="image-launch-vehicle-landscape"
+        />
+      </picture>
+      <picture hidden id="capsule">
+        <source
+          media="(min-width: 720px)"
+          srcset="assets/technology/image-space-capsule-portrait.jpg"
+        />
+        <img
+          src="./assets/technology/image-space-capsule-landscape.jpg"
+          alt="image-launch-vehicle-landscape"
+        />
+      </picture>
+      <picture hidden id="spaceport">
+        <source
+          media="(min-width: 720px)"
+          srcset="./assets/technology/image-spaceport-portrait.jpg"
+        />
+        <img
+          src="./assets/technology/image-spaceport-landscape.jpg "
+          alt="image-launch-vehicle-landscape"
+        />
+      </picture>
+      <div class="content flex flow">
+        <div class="numbers_indicators" role="numbersPanel">
+          <button
+            data-image="vehicle"
+            aria-selected="true"
+            role="numbers_btn"
+            tabindex="0"
+            aria-controls="vehicle"
+            class="bg-dark text-white btn"
+          >
+            <span class="">1 </span>
+          </button>
+          <button
+            data-image="capsule"
+            aria-selected="false"
+            role="numbers_btn"
+            tabindex="-1"
+            aria-controls="capsule"
+            class="bg-dark text-white btn"
+          >
+            <span class=""> 2 </span>
+          </button>
+          <button
+            data-image="spaceport"
+            aria-selected="false"
+            role="numbers_btn"
+            tabindex="-1"
+            aria-controls="spaceport"
+            class="bg-dark text-white btn"
+          >
+            <span class=""> 3 </span>
+          </button>
+        </div>
+
+        <article class="technology-info flow" role="contentPanel" id="vehicle">
+          <p class="fs-300 ff-sans-cond uppercase letter-spacing-2">
+            The terminology...
+          </p>
+          <h2 class="fs-700 ff-serif">Launch Vehicle</h2>
+          <p>
+            A launch vehicle or carrier rocket is a rocket-propelled vehicle
+            used to carry a payload from Earth's surface to space, usually to
+            Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
+            in operation. Standing 150 metres tall, it's quite an awe-inspiring
+            sight on the launch pad!
+          </p>
+        </article>
+        <article
+          hidden
+          class="technology-info flow"
+          role="contentPanel"
+          id="capsule"
+        >
+          <p class="fs-300 ff-sans-cond uppercase letter-spacing-2">
+            The terminology...
+          </p>
+          <h2 class="fs-700 ff-serif">Capsule</h2>
+          <p>
+            A launch vehicle or carrier rocket is a rocket-propelled vehicle
+            used to carry a payload from Earth's surface to space, usually to
+            Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
+            in operation. Standing 150 metres tall, it's quite an awe-inspiring
+            sight on the launch pad!
+          </p>
+        </article>
+        <article
+          hidden
+          class="technology-info flow"
+          role="contentPanel"
+          id="spaceport"
+        >
+          <p class="fs-300 ff-sans-cond uppercase letter-spacing-2">
+            The terminology...
+          </p>
+          <h2 class="fs-700 ff-serif">Spaceport</h2>
+          <p>
+            A spaceport or cosmodrome is a site for launching (or receiving)
+            spacecraft, by analogy to the seaport for ships or airport for
+            aircraft. Based in the famous Cape Canaveral, our spaceport is
+            ideally situated to take advantage of the Earth’s rotation for
+            launch.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <!-- js script file -->
+    <script src="/technology.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
+  </body>
+</html>
